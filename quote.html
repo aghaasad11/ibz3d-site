@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Request a Quote — IBZ3D</title>
+  <meta name="description" content="Request a quote for custom 3D-printed promotional products. Upload your logo, choose quantity, and get a response within 24 hours." />
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="IBZ3D Home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span class="brand-name">IBZ3D</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html#bestsellers">Best sellers</a>
+        <a class="btn btn-primary" href="quote.html">Request quote</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container quote-grid">
+      <div class="quote-left">
+        <h1>Request a quote</h1>
+        <p class="lead">
+          Tell us what you need — we’ll reply within <strong>24 hours</strong> with pricing and a mockup.
+        </p>
+
+        <div class="panel">
+          <h3>What to include (fastest quotes)</h3>
+          <ul class="list">
+            <li>Which product (or link a photo)</li>
+            <li>Quantity and deadline</li>
+            <li>Your logo (PNG/SVG/PDF)</li>
+            <li>Shipping city/postal code or GTA pickup</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Typical turnaround</h3>
+          <p class="muted">Standard production: 5–7 business days. Rush options available depending on quantity and design.</p>
+        </div>
+      </div>
+
+      <div class="quote-right">
+        <form id="quoteForm" class="form card" method="POST">
+          <div class="form-row">
+            <label>
+              Name
+              <input name="name" type="text" required />
+            </label>
+            <label>
+              Company
+              <input name="company" type="text" />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Email
+              <input name="email" type="email" required />
+            </label>
+            <label>
+              Phone
+              <input name="phone" type="tel" />
+            </label>
+          </div>
+
+          <label>
+            Product
+            <select name="product" id="productSelect" required>
+              <option value="">Select…</option>
+              <option>QR Review Stand</option>
+              <option>Keychains / Bag Tags</option>
+              <option>Desk Nameplates</option>
+              <option>Phone Stand</option>
+              <option>Mini Awards / Trophies</option>
+              <option>Cable Organizer</option>
+              <option>Other (describe below)</option>
+            </select>
+          </label>
+
+          <div class="form-row">
+            <label>
+              Quantity
+              <input name="quantity" type="number" min="1" placeholder="e.g., 50" required />
+            </label>
+            <label>
+              Deadline
+              <input name="deadline" type="date" />
+            </label>
+          </div>
+
+          <label>
+            Shipping (City + Postal) or “GTA pickup”
+            <input name="shipping" type="text" placeholder="Milton L9T… / GTA pickup" />
+          </label>
+
+          <label>
+            Notes (colors, branding, packaging, etc.)
+            <textarea name="notes" rows="4" placeholder="Tell us anything that matters…"></textarea>
+          </label>
+
+          <label>
+            Upload logo / reference (optional)
+            <input name="attachment" type="file" id="fileInput" />
+            <span class="hint">PNG, PDF, or SVG works best.</span>
+          </label>
+
+          <label class="checkbox">
+            <input name="sample_pack" type="checkbox" />
+            Also request a sample pack (businesses only)
+          </label>
+
+          <button class="btn btn-primary btn-block" type="submit">Send request</button>
+
+          <p class="hint">
+            Or email us directly: <a href="mailto:sales@ibz3d.ca">sales@ibz3d.ca</a>
+          </p>
+
+          <div id="formStatus" class="form-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <small class="muted">© <span id="year"></span> IBZ3D.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    // OPTIONAL: Set your Formspree endpoint here (recommended for hosting + email delivery)
+    // 1) Create a form on Formspree, copy endpoint URL like: https://formspree.io/f/xxxxxx
+    // 2) Paste it below.
+    window.IBZ3D_FORMSPREE_ENDPOINT = ""; // <-- e.g. "https://formspree.io/f/abcdwxyz"
+  </script>
+</body>
+</html>
